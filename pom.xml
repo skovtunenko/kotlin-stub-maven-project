@@ -144,12 +144,10 @@
                         <pluginOptions>
                             <!-- Each Annotation Is Placed On Its Own Line -->
 
-                            <!-- `no-arg` kotlin plugin settings:-->
-                            <!--<option>no-arg:annotation=com.skovtunenko.pet.annotations.NoArgConstructor</option>-->
-                            <!-- `all-open` kotlin plugin settings:-->
-                            <!--<option>all-open:annotation=com.skovtunenko.pet.annotations.AllOpen</option>-->
-                            <option>all-open:annotation=javax.persistence.Entity</option>
-                            <option>all-open:annotation=javax.persistence.Access</option>
+                            <!-- `no-arg` kotlin plugin settings: -->
+                            <option>no-arg:annotation=com.skovtunenko.pet.annotations.NoArgConstructor</option>
+                            <!-- `all-open` kotlin plugin settings: -->
+                            <option>all-open:annotation=com.skovtunenko.pet.annotations.AllOpen</option>
                         </pluginOptions>
                     </configuration>
                     <executions>
@@ -332,5 +330,27 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>documentation</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jetbrains.dokka</groupId>
+                        <artifactId>dokka-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
