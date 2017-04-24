@@ -238,11 +238,11 @@
                     <version>${dokka.version}</version>
                     <executions>
                         <execution>
+                            <phase>test</phase>
                             <id>attach-javadocs</id>
                             <goals>
                                 <goal>javadocJar</goal>
                             </goals>
-                            <phase>test</phase>
                         </execution>
                     </executions>
                 </plugin>
@@ -322,6 +322,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
             </plugin>
 
             <plugin>
